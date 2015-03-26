@@ -1,15 +1,13 @@
-// gulp
-var gulp = require('gulp');
-
-// plugins
-var connect = require('gulp-connect');
-var concat = require('gulp-concat');
-var jshint = require('gulp-jshint');
-var uglify = require('gulp-uglify');
-var minifyCSS = require('gulp-minify-css');
-var clean = require('gulp-clean');
-var bowerFiles = require('main-bower-files');
-var inject = require('gulp-inject');
+var gulp = require('gulp'),
+    concat = require('gulp-concat'),
+    jshint = require('gulp-jshint'),
+    uglify = require('gulp-uglify'),
+    minifyCSS = require('gulp-minify-css'),
+    clean = require('gulp-clean'),
+    bowerFiles = require('main-bower-files'),
+    inject = require('gulp-inject'),
+    connect = require('gulp-connect'),
+    historyApiFallback = require('connect-history-api-fallback');
 
 // lint js files
 gulp.task('lint', function() {
@@ -19,6 +17,31 @@ gulp.task('lint', function() {
     .pipe(jshint.reporter('fail'));
 });
 
+/* watch */
+
+gulp.task('reload-js', function () {
+  return gulp.src('./app/**/*.js')
+    .pipe(connect.reload());
+});
+
+gulp.task('reload-css', function () {
+  return gulp.src('./app/**/*.css')
+    .pipe(connect.reload());
+});
+
+gulp.task('reload-html', function () {
+  return gulp.src('./app/**/*.html')
+    .pipe(connect.reload());
+});
+ 
+gulp.task('watch', function () {
+  gulp.watch(['./app/**/*.js'], ['reload-js']);
+  gulp.watch(['./app/**/*.css'], ['reload-css']);
+  gulp.watch(['./app/**/*.html'], ['reload-html']);
+});
+
+/* Prepear for distribution */
+
 // clean dist folder
 gulp.task('clean', function() {
     return gulp.src('./dist/*')
@@ -27,7 +50,7 @@ gulp.task('clean', function() {
 
 // minify all css files
 gulp.task('prep-css-files', ['clean'], function() {
-  var opts = { comments: true, spare:true };
+  var opts = { comments: true, spare: true };
   return gulp.src(['./app/**/*.css', '!./app/lib/**'])
     .pipe(minifyCSS(opts))
     .pipe(gulp.dest('./dist/'))
@@ -85,13 +108,17 @@ gulp.task('index-build', ['prep-css-files', 'prep-js-files', 'copy-bower-compone
 gulp.task('connect', function () {
   connect.server({
     root: 'app/',
-    port: 3000
+    port: 3000,
+    livereload: true,
+    middleware: function(connect, opt) {
+      return [ historyApiFallback ];
+    }
   });
 });
 
 // default task
 gulp.task('default',
-  ['lint', 'index', 'connect']
+  ['lint', 'index', 'connect', 'watch']
 );
 
 // build task
