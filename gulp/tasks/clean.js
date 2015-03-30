@@ -5,5 +5,5 @@ var gulp = require('gulp'),
 
 gulp.task('clean', function() {
     return gulp.src('./dist/*')
-      .pipe(clean({ force: true }));
+        .pipe(clean({ force: true }));
 });

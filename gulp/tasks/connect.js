@@ -5,12 +5,12 @@ var gulp = require('gulp'),
     historyApiFallback = require('connect-history-api-fallback');
 
 gulp.task('connect', function () {
-  connect.server({
-    root: 'dist/',
-    port: 3000,
-    livereload: true,
-    middleware: function(connect, opt) {
-      return [ historyApiFallback ];
-    }
-  });
+    connect.server({
+        root: 'dist/',
+        port: 3000,
+        livereload: true,
+        middleware: function(connect, opt) {
+            return [ historyApiFallback ];
+        }
+    });
 });
