@@ -5,13 +5,24 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
     minifyCSS = require('gulp-minify-css'),
     gulpif = require('gulp-if'),
-    clean = require('gulp-clean');
+    clean = require('gulp-clean'),
+    path = require('path'),
+    bowerFiles = require('main-bower-files');
 
 var env = process.env.NODE_ENV  || 'development';
 
 gulp.task('prep-sass', ['clean'], function() {
+    var loadPaths = bowerFiles({
+        base: './app/lib',
+        filter: '**/_*.scss'
+    });
+
+    for (var i = 0; i < loadPaths.length; i++) {
+        loadPaths[i] = path.dirname(loadPaths[i]);
+    }
+
     return gulp.src(['./app/**/*.scss', '!./app/lib/**'])
-        .pipe(sass())
+        .pipe(sass({ includePaths: loadPaths }))
         .pipe(gulp.dest('./dist/'));
 });
 
