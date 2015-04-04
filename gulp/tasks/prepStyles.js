@@ -2,6 +2,7 @@
 
 var gulp = require('gulp'),
 	sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
 	concat = require('gulp-concat'),
     minifyCSS = require('gulp-minify-css'),
     gulpif = require('gulp-if'),
@@ -22,7 +23,9 @@ gulp.task('prep-sass', ['clean'], function() {
     }
 
     return gulp.src(['./app/**/*.scss', '!./app/lib/**'])
+        .pipe(sourcemaps.init())
         .pipe(sass({ includePaths: loadPaths }))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('./dist/'));
 });
 
