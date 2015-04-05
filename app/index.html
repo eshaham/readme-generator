@@ -15,16 +15,28 @@
   <!-- endinject -->
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="/">Home</a></li>
-    <li><a href="/about">About</a></li>
-  </ul>
-
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <div ui-view></div>
+  <div class="container">
+    <div class="header clearfix">
+      <nav>
+        <ul class="nav nav-pills pull-right">
+          <li role="presentation" class="active"><a href="/">Home</a></li>
+          <li role="presentation"><a href="/about">About</a></li>
+        </ul>
+      </nav>
+      <h3 class="text-muted">Project name</h3>
+    </div>
+
+    <div ui-view></div>
+
+    <footer class="footer">
+      <p>&copy; Company 2014</p>
+    </footer>
+
+  </div> <!-- /container -->
 
   <!-- bower:js -->
   <!-- endinject -->
