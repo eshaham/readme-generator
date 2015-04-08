@@ -8,11 +8,12 @@ var gulp = require('gulp'),
     gulpif = require('gulp-if'),
     clean = require('gulp-clean'),
     path = require('path'),
-    bowerFiles = require('main-bower-files');
+    bowerFiles = require('main-bower-files'),
+    connect = require('gulp-connect');
 
 var env = process.env.NODE_ENV  || 'development';
 
-gulp.task('prep-sass', ['clean'], function() {
+gulp.task('prep-sass', function() {
     var loadPaths = bowerFiles({
         base: './app/lib',
         filter: '**/_*.scss'
@@ -29,15 +30,16 @@ gulp.task('prep-sass', ['clean'], function() {
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('prep-css', ['clean', 'prep-sass'], function() {
+gulp.task('prep-css', ['prep-sass'], function() {
     return gulp.src(['./app/**/*.css', '!./app/lib/**'])
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('prep-styles', ['clean', 'prep-sass', 'prep-css'], function() {
+gulp.task('prep-styles', ['prep-sass', 'prep-css'], function() {
     return gulp.src(['./dist/**/*.css', '!./dist/lib/**'])
         .pipe(gulpif(env === 'production', clean({ force: true })))
         .pipe(gulpif(env === 'production', concat('site.css')))
         .pipe(gulpif(env === 'production', minifyCSS({ comments: true, spare: true })))
-        .pipe(gulp.dest('./dist/'));
+        .pipe(gulp.dest('./dist/'))
+        .pipe(connect.reload());
 });
