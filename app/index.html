@@ -20,15 +20,7 @@
   <![endif]-->
 
   <div class="container">
-    <div class="header clearfix">
-      <nav>
-        <ul class="nav nav-pills pull-right">
-          <li role="presentation" class="active"><a href="/">Home</a></li>
-          <li role="presentation"><a href="/about">About</a></li>
-        </ul>
-      </nav>
-      <h3 class="text-muted">Project name</h3>
-    </div>
+    <header ng-include="'./modules/core/views/header.client.view.html'"></header>
 
     <div ui-view></div>
 
