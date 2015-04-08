@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 var env = process.env.NODE_ENV  || 'development';
 
 // prepare index.html file
-gulp.task('prep-index', ['prep-styles', 'prep-scripts', 'copy-bower-components', 'copy-html-files'], function () {
+gulp.task('prep-index', ['prep-styles', 'prep-scripts', 'copy-bower-components', 'copy-html-files', 'copy-images'], function () {
     var bowerOptions = { 
         paths: { bowerDirectory: './dist/lib' }
     };
