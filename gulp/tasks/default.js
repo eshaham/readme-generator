@@ -2,4 +2,4 @@
 
 var gulp = require('gulp');
 
-gulp.task('default', ['lint', 'prep-index', 'connect', 'watch']);
+gulp.task('default', ['lint', 'prep', 'connect', 'watch']);

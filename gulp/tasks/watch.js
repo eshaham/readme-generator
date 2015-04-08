@@ -1,25 +1,9 @@
 'use strict';
 
-var gulp = require('gulp'),
-    connect = require('gulp-connect');
-
-gulp.task('reload-js', function () {
-    return gulp.src('./app/**/*.js')
-        .pipe(connect.reload());
-});
-
-gulp.task('reload-css', function () {
-    return gulp.src('./app/**/*.css')
-        .pipe(connect.reload());
-});
-
-gulp.task('reload-html', function () {
-    return gulp.src('./app/**/*.html')
-        .pipe(connect.reload());
-});
+var gulp = require('gulp');
  
 gulp.task('watch', function () {
-    gulp.watch(['./app/**/*.js'], ['reload-js']);
-    gulp.watch(['./app/**/*.css'], ['reload-css']);
-    gulp.watch(['./app/**/*.html'], ['reload-html']);
+    gulp.watch(['./app/**/*.js'], ['prep-scripts']);
+    gulp.watch(['./app/**/*.css', './app/**/*.scss'], ['prep-styles']);
+    gulp.watch(['./app/**/*.html'], ['copy-html-files']);
 });
