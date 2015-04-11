@@ -7,12 +7,14 @@ angular.module('myApp.home').config(['$stateProvider',
             state('home', {
                 url: '/',
                 templateUrl: 'modules/home/views/home.client.view.html',
-                controller: 'HomeCtrl'
+                controller: 'HomeCtrl',
+                data : { pageTitle: 'Home' }
             }).
             state('about', {
                 url: '/about',
                 templateUrl: 'modules/home/views/about.client.view.html',
-                controller: 'AboutCtrl'
+                controller: 'AboutCtrl',
+                data : { pageTitle: 'About' }
             });
     }
 ]);
