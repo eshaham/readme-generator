@@ -7,7 +7,7 @@ angular.module('readme.generate').config(['$stateProvider',
             state('generate', {
                 url: '/generate',
                 templateUrl: 'modules/generate/views/generate.client.view.html',
-                controller: 'GenerateCtrl',
+                controller: 'GenerateCtrl as vm',
                 data : { pageTitle: 'Generate Readme' }
             });
     }

@@ -9,3 +9,8 @@ body {
 }
 
 @import 'bootstrap-custom';
+
+.form-group.required label:after { 
+   content: "*";
+   color: $state-danger-text;
+}
