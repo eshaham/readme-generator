@@ -1,7 +1,7 @@
 'use strict';
 
 // Setting up route
-angular.module('myApp.home').config(['$stateProvider',
+angular.module('readme.home').config(['$stateProvider',
     function($stateProvider) {
         $stateProvider.
             state('home', {

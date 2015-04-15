@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.core').directive('title', ['$rootScope', '$timeout',
+angular.module('readme.core').directive('title', ['$rootScope', '$timeout',
   function($rootScope, $timeout) {
     return {
       link: function() {

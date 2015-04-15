@@ -1,7 +1,7 @@
 {
-  "name": "angular-gulp",
+  "name": "readme-generator",
   "version": "0.1.0",
-  "description": "A boilerplate for Angular.js, Gulp.js, and Sass",
+  "description": "A tool for generating readme files in Github's markdown language",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

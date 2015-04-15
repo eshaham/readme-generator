@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('myApp.core', []);
+angular.module('readme.core', []);

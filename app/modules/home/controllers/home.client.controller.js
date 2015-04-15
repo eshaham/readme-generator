@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.home').controller('HomeCtrl', [
+angular.module('readme.home').controller('HomeCtrl', [
     function() {
 
     }

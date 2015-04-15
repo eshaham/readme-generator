@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('myApp.home', ['ui.router']);
+angular.module('readme.home', ['ui.router']);

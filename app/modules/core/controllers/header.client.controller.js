@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.core').controller('HeaderCtrl', [
+angular.module('readme.core').controller('HeaderCtrl', [
     function() {
 
     }
