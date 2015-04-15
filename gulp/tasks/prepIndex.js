@@ -22,7 +22,8 @@ gulp.task('prep-index', ['prep-styles', 'prep-scripts', 'copy-bower-components',
             { 
                 cdn: 'cdnjs:angular-ui-router',
                 test: 'window.angular'
-            }
+            },
+            'cdnjs:angular-ui-bootstrap'
         ])))
         .pipe(gulp.dest('./dist'));
 });
