@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('readme.generate', ['ui.router', 'ui.bootstrap']);
+angular.module('readme.generate', ['ui.router', 'ui.bootstrap', 'ngTagsInput']);

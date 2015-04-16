@@ -1,22 +1,47 @@
 <form novalidate>
-  <div class="row">
-    <div class="col-md-6 col-xs-12">
-      <div class="form-group required">
-        <label for="projectNameText">Project Name</label>
-        <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-tag"></i></span>
-          <input type="text" class="form-control" data-ng-model="vm.data.projectName" placeholder="Enter your project's name">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">General</h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <div class="form-group required">
+            <label for="projectNameText">Project Name</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-tag"></i></span>
+              <input type="text" class="form-control" data-ng-model="vm.data.projectName" placeholder="Enter your project's name">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <div class="form-group required">
+            <label for="projectNameText">Project Description</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-edit"></i></span>
+              <textarea class="form-control" data-ng-model="vm.data.projectDescription" placeholder="Enter your project's description" rows="6"></textarea>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-6 col-xs-12">
-      <div class="form-group required">
-        <label for="projectNameText">Project Description</label>
-        <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-edit"></i></span>
-          <textarea class="form-control" data-ng-model="vm.data.projectDescription" placeholder="Enter your project's description" rows="6"></textarea>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Prerequisites</h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <div class="form-group">
+            <label for="projectNameText">NPM</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-archive"></i></span>
+              <tags-input data-ng-model="vm.data.npmPackages" placeholder="List any npm package globally required by this project"></tags-input>
+            </div>
+          </div>
         </div>
       </div>
     </div>

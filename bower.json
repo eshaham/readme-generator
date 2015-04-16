@@ -18,6 +18,12 @@
     "angular-ui-router": "~0.2.13",
     "bootstrap-sass": "~3.3.4",
     "angular-bootstrap": "~0.12.1",
-    "fontawesome": "~4.3.0"
+    "fontawesome": "~4.3.0",
+    "ng-tags-input": "~2.3.0"
+  },
+  "overrides": {
+    "ng-tags-input": {
+      "main": ["**/*.min.js", "**/ng-tags-input.min.css", "**/ng-tags-input.bootstrap.min.css"]
+    }
   }
 }

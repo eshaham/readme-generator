@@ -4,7 +4,9 @@ angular.module('readme.generate').controller('GenerateCtrl', ['$modal',
     function($modal) {
     	var self = this;
 
-    	this.data = {};
+    	this.data = {
+    		npmPackages: []
+    	};
 
     	this.generate = function() {
     		var modalInstance = $modal.open({
