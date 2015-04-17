@@ -39,8 +39,11 @@
             <label for="projectNameText">NPM</label>
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-archive"></i></span>
-              <tags-input data-ng-model="vm.data.npmPackages" placeholder="List any npm package globally required by this project"></tags-input>
+              <tags-input data-ng-model="vm.data.npmPackages" data-display-property="name" placeholder="Add package by name">
+                <auto-complete data-source="vm.loadNpmPackages($query)" data-min-length="1" aria-describedby="helpBlock"></auto-complete>
+              </tags-input>              
             </div>
+            <span id="helpBlock" class="help-block">List any globally required npm package your project requires.</span>
           </div>
         </div>
       </div>
