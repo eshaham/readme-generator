@@ -1,149 +1,149 @@
 [
   {
-    "Package name":"grunt-cli"
+    "name":"grunt-cli"
   },
   {
-    "Package name":"bower"
+    "name":"bower"
   },
   {
-    "Package name":"gulp"
+    "name":"gulp"
   },
   {
-    "Package name":"grunt"
+    "name":"grunt"
   },
   {
-    "Package name":"express"
+    "name":"express"
   },
   {
-    "Package name":"npm"
+    "name":"npm"
   },
   {
-    "Package name":"cordova"
+    "name":"cordova"
   },
   {
-    "Package name":"forever"
+    "name":"forever"
   },
   {
-    "Package name":"less"
+    "name":"less"
   },
   {
-    "Package name":"pm2"
+    "name":"pm2"
   },
   {
-    "Package name":"karma"
+    "name":"karma"
   },
   {
-    "Package name":"coffee-script"
+    "name":"coffee-script"
   },
   {
-    "Package name":"statsd"
+    "name":"statsd"
   },
   {
-    "Package name":"yo"
+    "name":"yo"
   },
   {
-    "Package name":"karma-phantomjs-launcher"
+    "name":"karma-phantomjs-launcher"
   },
   {
-    "Package name":"phonegap"
+    "name":"phonegap"
   },
   {
-    "Package name":"mocha"
+    "name":"mocha"
   },
   {
-    "Package name":"jshint"
+    "name":"jshint"
   },
   {
-    "Package name":"ronn"
+    "name":"ronn"
   },
   {
-    "Package name":"express-generator"
+    "name":"express-generator"
   },
   {
-    "Package name":"statsd-librato-backend"
+    "name":"statsd-librato-backend"
   },
   {
-    "Package name":"eslint"
+    "name":"eslint"
   },
   {
-    "Package name":"istanbul"
+    "name":"istanbul"
   },
   {
-    "Package name":"protractor"
+    "name":"protractor"
   },
   {
-    "Package name":"generator-angular"
+    "name":"generator-angular"
   },
   {
-    "Package name":"phantomjs"
+    "name":"phantomjs"
   },
   {
-    "Package name":"nodemon"
+    "name":"nodemon"
   },
   {
-    "Package name":"karma-cli"
+    "name":"karma-cli"
   },
   {
-    "Package name":"socket.io"
+    "name":"socket.io"
   },
   {
-    "Package name":"node-gyp"
+    "name":"node-gyp"
   },
   {
-    "Package name":"request"
+    "name":"request"
   },
   {
-    "Package name":"react-tools"
+    "name":"react-tools"
   },
   {
-    "Package name":"uglify-js"
+    "name":"uglify-js"
   },
   {
-    "Package name":"grunt-contrib-watch"
+    "name":"grunt-contrib-watch"
   },
   {
-    "Package name":"browserify"
+    "name":"browserify"
   },
   {
-    "Package name":"body-parser"
+    "name":"body-parser"
   },
   {
-    "Package name":"stylus"
+    "name":"stylus"
   },
   {
-    "Package name":"ionic"
+    "name":"ionic"
   },
   {
-    "Package name":"grunt-contrib-uglify"
+    "name":"grunt-contrib-uglify"
   },
   {
-    "Package name":"casperjs"
+    "name":"casperjs"
   },
   {
-    "Package name":"learnyounode"
+    "name":"learnyounode"
   },
   {
-    "Package name":"marked"
+    "name":"marked"
   },
   {
-    "Package name":"node-inspector"
+    "name":"node-inspector"
   },
   {
-    "Package name":"http-server"
+    "name":"http-server"
   },
   {
-    "Package name":"jsdom"
+    "name":"jsdom"
   },
   {
-    "Package name":"mongoose"
+    "name":"mongoose"
   },
   {
-    "Package name":"ember-cli"
+    "name":"ember-cli"
   },
   {
-    "Package name":"jscs"
+    "name":"jscs"
   },
   {
-    "Package name":"mongodb"
+    "name":"mongodb"
   }
 ]
