@@ -28,26 +28,23 @@
       </div>
     </div>
   </div>
-  <div class="panel panel-default">
+  <div class="panel panel-default" data-ng-repeat="section in vm.sections">
     <div class="panel-heading">
-      <h3 class="panel-title">Prerequisites</h3>
+      <h3 class="panel-title">{{ section.displayName }}</h3>
     </div>
     <div class="panel-body">
-      <div class="row">
-        <div class="col-md-6 col-xs-12">
-          <div class="form-group">
-            <label for="projectNameText">NPM</label>
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-archive"></i></span>
-              <tags-input data-ng-model="vm.data.npmPackages" data-display-property="name" placeholder="Add package by name">
-                <auto-complete data-source="vm.loadNpmPackages($query)" data-min-length="1" aria-describedby="helpBlock"></auto-complete>
-              </tags-input>              
-            </div>
-            <span id="helpBlock" class="help-block">List any globally required npm package your project requires.</span>
-          </div>
-        </div>
+      <div data-ng-switch="section.sectionType">
+        <prerequisites ng-switch-when="prerequisites" npm-packages="vm.data.npmPackages"></prerequisites>
       </div>
     </div>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+      Add section <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href data-ng-click="vm.addSection('prerequisites')">Prerequisites</a></li>
+    </ul>
   </div>
   <button type="submit" class="btn btn-primary" data-ng-click="vm.generate()">Generate</button>
 </form>

@@ -68,7 +68,7 @@ angular.module('readme.generate').factory('Generator', [
 
     		while(readme.startsWith('\n')) {
     			readme = readme.substring(1);
-    		};
+    		}
 
     		return readme;
 		}

@@ -1,23 +1,23 @@
 'use strict';
 
-angular.module('readme.generate').controller('GenerateCtrl', ['$http', '$modal',
-    function($http, $modal) {
-    	var self = this;
+angular.module('readme.generate').controller('GenerateCtrl', ['$modal',
+    function($modal) {
+    	var vm = this;
 
     	this.data = {
     		npmPackages: []
     	};
 
-    	this.loadNpmPackages = function(query) {
-			return $http.get('assets/npm.json').then(function(result) {
-				var filtered = [];
-				angular.forEach(result.data, function(pkg) {
-					if(pkg.name.indexOf(query) >= 0) {
-						filtered.push(pkg);
-					};
-				});
-			    return filtered;
-			});
+    	this.sections = [];
+
+		this.addSection = function(sectionType) {
+			if(sectionType === 'prerequisites') {
+				var section = {
+					displayName: 'Prerequisites',
+					sectionType: 'prerequisites'
+				};
+				vm.sections.push(section);
+			}
 		};
 
     	this.generate = function() {
@@ -27,7 +27,7 @@ angular.module('readme.generate').controller('GenerateCtrl', ['$http', '$modal',
 				size: 'lg',
 				resolve: {
 					data: function () {
-					  return self.data;
+					  return vm.data;
 					}
 				}
 			});
