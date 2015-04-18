@@ -30,7 +30,20 @@
   </div>
   <div class="panel panel-default" data-ng-repeat="section in vm.sections">
     <div class="panel-heading">
-      <h3 class="panel-title">{{ section.displayName }}</h3>
+      <div class="row">
+        <div class="col-xs-9">
+          <h3 class="panel-title">
+            {{ section.displayName }}
+          </h3>
+        </div>
+        <div class="col-xs-3">
+          <a class="btn btn-xs btn-danger pull-right" href data-ng-click="vm.removeSection(section)">
+            <span>
+              <i class="fa fa-trash"></i>
+            </span>
+          </a>
+        </div>
+      </div>
     </div>
     <div class="panel-body">
       <div data-ng-switch="section.sectionType">
@@ -43,7 +56,9 @@
       Add section <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" role="menu">
-      <li><a href data-ng-click="vm.addSection('prerequisites')">Prerequisites</a></li>
+      <li data-ng-repeat="possibleSection in vm.possibleSections | filter:{ inUse: false }">
+        <a href data-ng-click="vm.addSection(possibleSection)">{{ possibleSection.displayName }}</a>
+      </li>
     </ul>
   </div>
   <button type="submit" class="btn btn-primary" data-ng-click="vm.generate()">Generate</button>

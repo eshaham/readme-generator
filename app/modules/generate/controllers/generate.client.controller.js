@@ -8,17 +8,34 @@ angular.module('readme.generate').controller('GenerateCtrl', ['$modal',
     		npmPackages: []
     	};
 
+        this.possibleSections = [
+            {
+                sectionType: 'prerequisites',
+                displayName: 'Prerequisites',
+                multiple: false,
+                inUse: false
+            }
+        ];
     	this.sections = [];
 
-		this.addSection = function(sectionType) {
-			if(sectionType === 'prerequisites') {
-				var section = {
-					displayName: 'Prerequisites',
-					sectionType: 'prerequisites'
-				};
-				vm.sections.push(section);
-			}
+		this.addSection = function(sectionMetadata) {
+            sectionMetadata.inUse = true;
+            var section = {
+                sectionType: sectionMetadata.sectionType,
+                displayName: sectionMetadata.displayName,
+                metadata: sectionMetadata
+            };
+
+			vm.sections.push(section);
 		};
+
+        this.removeSection = function(section) {
+            section.metadata.inUse = false;
+            var index = vm.sections.indexOf(section);
+            if (index >= 0) {
+                vm.sections.splice(index, 1);
+            }
+        };
 
     	this.generate = function() {
     		var modalInstance = $modal.open({
