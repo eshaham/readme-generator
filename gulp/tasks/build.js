@@ -2,4 +2,4 @@
 
 var gulp = require('gulp');
 
-gulp.task('build', ['lint', 'clean', 'prep-index']);
+gulp.task('build', ['lint', 'prep']);

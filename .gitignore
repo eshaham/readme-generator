@@ -1,3 +1,4 @@
 app/lib
 dist
 node_modules
+.publish
