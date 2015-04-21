@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="readme">
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{ title }}</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/lib/fontawesome/css/font-awesome.css">
+  <link rel="stylesheet" href="/lib/ng-tags-input/ng-tags-input.min.css">
+  <link rel="stylesheet" href="/lib/ng-tags-input/ng-tags-input.bootstrap.min.css">
+  <!-- endinject -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/assets/application.css">
+  <link rel="stylesheet" href="/modules/generate/styles/generate.css">
+  <link rel="stylesheet" href="/modules/home/styles/home.css">
+  <!-- endinject -->
+</head>
+<body>
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div class="container">
+    <header ng-include="'./modules/core/views/header.client.view.html'"></header>
+
+    <div ui-view></div>
+
+    <footer ng-include="'./modules/core/views/footer.client.view.html'"></footer>
+
+  </div> <!-- /container -->
+
+  <!-- bower:js -->
+  <script src="/lib/angular/angular.js"></script>
+  <script src="/lib/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="/lib/jquery/dist/jquery.js"></script>
+  <script src="/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="/lib/ng-tags-input/ng-tags-input.min.js"></script>
+  <script src="/lib/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+  <!-- endinject -->
+  <!-- inject:js -->
+  <script src="/app.js"></script>
+  <script src="/modules/core/core.client.module.js"></script>
+  <script src="/modules/generate/generate.client.module.js"></script>
+  <script src="/modules/home/home.client.module.js"></script>
+  <script src="/modules/core/controllers/header.client.controller.js"></script>
+  <script src="/modules/core/directives/page-title.client.directive.js"></script>
+  <script src="/modules/generate/config/generate.client.routes.js"></script>
+  <script src="/modules/generate/controllers/generate-result.client.controller.js"></script>
+  <script src="/modules/generate/controllers/generate.client.controller.js"></script>
+  <script src="/modules/generate/controllers/prerequisites.client.controller.js"></script>
+  <script src="/modules/generate/services/generator.client.service.js"></script>
+  <script src="/modules/generate/directives/prerequisites.client.directive.js"></script>
+  <script src="/modules/home/config/home.client.routes.js"></script>
+  <script src="/modules/home/controllers/about.client.controller.js"></script>
+  <script src="/modules/home/controllers/home.client.controller.js"></script>
+  <!-- endinject -->
+</body>
+</html>
