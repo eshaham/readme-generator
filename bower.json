@@ -23,7 +23,14 @@
   },
   "overrides": {
     "ng-tags-input": {
-      "main": ["**/*.min.js", "**/ng-tags-input.min.css", "**/ng-tags-input.bootstrap.min.css"]
+      "main": [
+        "**/*.min.js",
+        "**/ng-tags-input.min.css",
+        "**/ng-tags-input.bootstrap.min.css"
+      ]
     }
+  },
+  "resolutions": {
+    "angular": "~1.3.15"
   }
 }
